@@ -1,0 +1,132 @@
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\appsettings.Development.json
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\appsettings.json
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\QLNhaHang.API.exe
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\QLNhaHang.API.deps.json
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\QLNhaHang.API.runtimeconfig.json
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\QLNhaHang.API.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\QLNhaHang.API.pdb
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Humanizer.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.csproj.AssemblyReference.cache
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.AssemblyInfoInputs.cache
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.AssemblyInfo.cs
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.csproj.CoreCompileInputs.cache
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.MvcApplicationPartsAssemblyInfo.cs
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.MvcApplicationPartsAssemblyInfo.cache
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\staticwebassets.build.json
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\staticwebassets.development.json
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\scopedcss\bundle\QLNhaHang.API.styles.css
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.csproj.CopyComplete
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.dll
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\refint\QLNhaHang.API.dll
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.pdb
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.genruntimeconfig.cache
+D:\đồ án\New folder\QLNhaHang.API\obj\Debug\net6.0\ref\QLNhaHang.API.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\đồ án\New folder\QLNhaHang.API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\appsettings.Development.json
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\appsettings.json
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\QLNhaHang.API.exe
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\QLNhaHang.API.deps.json
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\QLNhaHang.API.runtimeconfig.json
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\QLNhaHang.API.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\QLNhaHang.API.pdb
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Humanizer.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.csproj.AssemblyReference.cache
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.AssemblyInfoInputs.cache
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.AssemblyInfo.cs
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.csproj.CoreCompileInputs.cache
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.MvcApplicationPartsAssemblyInfo.cs
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.MvcApplicationPartsAssemblyInfo.cache
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\staticwebassets.build.json
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\staticwebassets.development.json
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\scopedcss\bundle\QLNhaHang.API.styles.css
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.csproj.CopyComplete
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.dll
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\refint\QLNhaHang.API.dll
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.pdb
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.genruntimeconfig.cache
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\ref\QLNhaHang.API.dll
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.Resource.QLNhaHangResource.resources
+D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.csproj.GenerateResource.cache
