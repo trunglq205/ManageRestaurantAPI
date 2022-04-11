@@ -1,4 +1,5 @@
 ﻿using QLNhaHang.API.Entities;
+using QLNhaHang.API.Helpers;
 
 namespace QLNhaHang.API.Interfaces
 {
@@ -9,6 +10,7 @@ namespace QLNhaHang.API.Interfaces
 
         public Menu GetById(string menuId);
 
+        public PageResult<Menu> GetPaging(string? keySearch, Pagination? pagination = null);
         public Menu Insert(Menu menu);
 
         

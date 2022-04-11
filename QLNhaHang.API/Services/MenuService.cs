@@ -1,5 +1,6 @@
 ﻿using QLNhaHang.API.Entities;
 using QLNhaHang.API.Exceptions;
+using QLNhaHang.API.Helpers;
 using QLNhaHang.API.Interfaces;
 using QLNhaHang.API.Utils;
 
@@ -88,6 +89,19 @@ namespace QLNhaHang.API.Services
                     trans.Commit();
                 }
             }
+        }
+
+        public PageResult<Menu> GetPaging(string? keySearch, Pagination? pagination = null)
+        {
+            var query = dbContext.Menus.OrderByDescending(x => x.CreatedTime).AsQueryable();
+            if (!string.IsNullOrEmpty(keySearch))
+            {
+                query = query.Where(x => x.MenuName.ToLower().Contains(keySearch.ToLower()));
+            }
+            var menus = PageResult<Menu>.ToPageResult(pagination, query).AsEnumerable();
+            pagination.TotalCount = query.Count();
+            var res = new PageResult<Menu>(pagination, menus);
+            return res;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QLNhaHang.API.Entities;
 using QLNhaHang.API.Exceptions;
+using QLNhaHang.API.Helpers;
 using QLNhaHang.API.Interfaces;
 using QLNhaHang.API.Services;
 using QLNhaHang.API.Utils;
@@ -46,6 +47,21 @@ namespace QLNhaHang.API.APIs
             {
                 var response = EntityUtils<Menu>.CatchValidateException(ex, ex.Message);
                 return BadRequest(response);
+            }
+            catch (Exception ex)
+            {
+                var response = EntityUtils<Menu>.CatchValidateException(ex, Resource.QLNhaHangResource.ExceptionError);
+                return StatusCode(500, response);
+            }
+        }
+
+        [HttpGet("paging")]
+        public IActionResult GetPaging([FromQuery]string? keySearch,[FromQuery]Pagination? pagination = null)
+        {
+            try
+            {
+                var res = menuService.GetPaging(keySearch, pagination);
+                return Ok(res);
             }
             catch (Exception ex)
             {

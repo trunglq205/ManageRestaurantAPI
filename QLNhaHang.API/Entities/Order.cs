@@ -1,4 +1,5 @@
-﻿using QLNhaHang.API.Enums;
+﻿using QLNhaHang.API.Attribute;
+using QLNhaHang.API.Enums;
 using System;
 using System.Collections.Generic;
 
@@ -12,7 +13,9 @@ namespace QLNhaHang.API.Entities
             OrderDetails = new HashSet<OrderDetail>();
         }
 
-        public string? OrderId { get; set; } = null!;
+        public string? OrderId { get; set; }
+        [NotEmpty]
+        [PropertyName("Số bàn")]
         public int? TableNumber { get; set; }
         public decimal? TotalPrice { get; set; }
         public Status? Status { get; set; }

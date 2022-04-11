@@ -27,6 +27,8 @@ namespace QLNhaHang.API.Services
             }
             else
             {
+                var lstOrderDetails = dbContext.OrderDetails.Where(x=>x.OrderId == orderId).ToList();
+                order.OrderDetails = lstOrderDetails;
                 return order;
             }
         }
@@ -38,13 +40,13 @@ namespace QLNhaHang.API.Services
                 EntityUtils<Order>.ValidateData(order);
                 order.OrderId = Guid.NewGuid().ToString();
                 order.CreatedTime = DateTime.Now;
-                var lstChiTietOrder = order.OrderDetails;
+                var lstOrderDetails = order.OrderDetails;
                 order.OrderDetails = null;
                 order.Status = Enums.Status.Waiting;
                 order.TotalPrice = 0;
                 dbContext.Orders.Add(order);
                 dbContext.SaveChanges();
-                foreach (var chiTiet in lstChiTietOrder)
+                foreach (var chiTiet in lstOrderDetails)
                 {
                     if(dbContext.Menus.Any(x=>x.MenuId == chiTiet.MenuId))
                     {
@@ -53,14 +55,13 @@ namespace QLNhaHang.API.Services
                         var menu = dbContext.Menus.Find(chiTiet.MenuId);
                         order.TotalPrice += menu.Price * chiTiet.Amount;
                         dbContext.OrderDetails.Add(chiTiet);
-                        dbContext.SaveChanges();
                     }
                     else
                     {
                         throw new QLNhaHangException(Resource.QLNhaHangResource.MenuNotFound);
                     }
                 }
-                dbContext.Update(order);
+                dbContext.Orders.Update(order);
                 dbContext.SaveChanges();
                 trans.Commit();
                 return order;
@@ -79,9 +80,38 @@ namespace QLNhaHang.API.Services
                 }
                 else
                 {
+                    var lstOrderDetails = dbContext.OrderDetails.Where(x => x.OrderId == orderFind.OrderId).ToList();
+                    orderFind.TotalPrice = 0;
+                    if (order.OrderDetails == null || order.OrderDetails.Count == 0)
+                    {
+                        dbContext.OrderDetails.RemoveRange(lstOrderDetails);
+                        dbContext.SaveChanges();
+                    }
+                    else
+                    {
+                        var lstDeletes = new List<OrderDetail>();
+                        foreach (var orderDetail in lstOrderDetails)
+                        {
+                            if (!order.OrderDetails.Any(x => x.OrderDetailId == orderDetail.OrderDetailId))
+                            {
+                                lstDeletes.Add(orderDetail);
+                            }
+                            else
+                            {
+                                var orderDetailUpdate = order.OrderDetails.FirstOrDefault(x => x.OrderDetailId == orderDetail.OrderDetailId);
+                                orderDetail.OrderId = orderFind.OrderId; 
+                                orderDetail.Amount = orderDetailUpdate.Amount;
+                                dbContext.OrderDetails.Update(orderDetail);
+                                var menu = dbContext.Menus.FirstOrDefault(x=>x.MenuId == orderDetail.MenuId);
+                                orderFind.TotalPrice += menu.Price * orderDetail.Amount;
+                            }
+                        }
+                        dbContext.OrderDetails.RemoveRange(lstDeletes);
+                        dbContext.SaveChanges();
+                    }
                     orderFind.TableNumber = order.TableNumber;
                     orderFind.UpdateTime = DateTime.Now;
-                    dbContext.Update(orderFind);
+                    dbContext.Orders.Update(orderFind);
                     dbContext.SaveChanges();
                     trans.Commit();
                     return orderFind;
@@ -91,7 +121,24 @@ namespace QLNhaHang.API.Services
 
         public void Delete(string orderId)
         {
-            throw new NotImplementedException();
+            using (var trans = dbContext.Database.BeginTransaction())
+            {
+                var order = dbContext.Orders.Find(orderId);
+                if (order == null)
+                {
+                    throw new QLNhaHangException(String.Format(Resource.QLNhaHangResource.OrderNotFound));
+                }
+                else
+                {
+                    var lstOrderDetails = dbContext.OrderDetails.Where(x => x.OrderId == orderId).ToList();
+                    dbContext.OrderDetails.RemoveRange(lstOrderDetails);
+                    dbContext.SaveChanges();
+                    dbContext.Orders.Remove(order);
+                    dbContext.SaveChanges();
+                    trans.Commit();
+                }
+                
+            }
         }
     }
 }

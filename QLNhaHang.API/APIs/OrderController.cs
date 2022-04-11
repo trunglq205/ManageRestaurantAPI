@@ -32,6 +32,26 @@ namespace QLNhaHang.API.APIs
                 return StatusCode(500, response);
             }
         }
+        [HttpGet("{orderId}")]
+        public IActionResult GetById(string orderId)
+        {
+            try
+            {
+                var res = orderService.GetById(orderId);
+                return Ok(res);
+            }
+            catch (QLNhaHangException ex)
+            {
+                var response = EntityUtils<Menu>.CatchValidateException(ex, ex.Message);
+                return BadRequest(response);
+            }
+            catch (Exception ex)
+            {
+                var response = EntityUtils<Menu>.CatchValidateException(ex, Resource.QLNhaHangResource.ExceptionError);
+                return StatusCode(500, response);
+            }
+        }
+
         [HttpPost]
         public IActionResult Post(Order order)
         {
