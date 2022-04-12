@@ -97,6 +97,15 @@ namespace QLNhaHang.API.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Không tìm thấy hóa đơn trong cơ sở dữ liệu!.
+        /// </summary>
+        public static string InvoiceNotFound {
+            get {
+                return ResourceManager.GetString("InvoiceNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Không tìm thấy món ăn trong cơ sở dữ liệu!.
         /// </summary>
         public static string MenuNotFound {

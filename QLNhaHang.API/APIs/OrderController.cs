@@ -42,12 +42,12 @@ namespace QLNhaHang.API.APIs
             }
             catch (QLNhaHangException ex)
             {
-                var response = EntityUtils<Menu>.CatchValidateException(ex, ex.Message);
+                var response = EntityUtils<Order>.CatchValidateException(ex, ex.Message);
                 return BadRequest(response);
             }
             catch (Exception ex)
             {
-                var response = EntityUtils<Menu>.CatchValidateException(ex, Resource.QLNhaHangResource.ExceptionError);
+                var response = EntityUtils<Order>.CatchValidateException(ex, Resource.QLNhaHangResource.ExceptionError);
                 return StatusCode(500, response);
             }
         }

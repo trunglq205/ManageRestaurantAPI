@@ -129,6 +129,9 @@
   <data name="ExceptionError" xml:space="preserve">
     <value>Có lỗi xảy ra liên hệ lập trình viên!</value>
   </data>
+  <data name="InvoiceNotFound" xml:space="preserve">
+    <value>Không tìm thấy hóa đơn trong cơ sở dữ liệu!</value>
+  </data>
   <data name="MenuNotFound" xml:space="preserve">
     <value>Không tìm thấy món ăn trong cơ sở dữ liệu!</value>
   </data>

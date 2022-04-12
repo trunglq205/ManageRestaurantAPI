@@ -53,8 +53,10 @@ namespace QLNhaHang.API.Services
                         chiTiet.OrderDetailId = Guid.NewGuid().ToString();
                         chiTiet.OrderId = order.OrderId;
                         var menu = dbContext.Menus.Find(chiTiet.MenuId);
-                        order.TotalPrice += menu.Price * chiTiet.Amount;
+                        chiTiet.Price = menu.Price * chiTiet.Amount;
+                        order.TotalPrice += chiTiet.Price;
                         dbContext.OrderDetails.Add(chiTiet);
+                        dbContext.SaveChanges();
                     }
                     else
                     {
@@ -103,7 +105,8 @@ namespace QLNhaHang.API.Services
                                 orderDetail.Amount = orderDetailUpdate.Amount;
                                 dbContext.OrderDetails.Update(orderDetail);
                                 var menu = dbContext.Menus.FirstOrDefault(x=>x.MenuId == orderDetail.MenuId);
-                                orderFind.TotalPrice += menu.Price * orderDetail.Amount;
+                                orderDetail.Price = menu.Price * orderDetail.Amount;
+                                orderFind.TotalPrice += orderDetail.Price;
                             }
                         }
                         dbContext.OrderDetails.RemoveRange(lstDeletes);

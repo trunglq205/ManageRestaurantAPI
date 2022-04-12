@@ -135,9 +135,9 @@ namespace QLNhaHang.API.Entities
                     .HasColumnName("OrderID")
                     .IsFixedLength();
 
-                entity.HasOne(d => d.InvoiceDetailNavigation)
-                    .WithOne(p => p.InvoiceDetail)
-                    .HasForeignKey<InvoiceDetail>(d => d.InvoiceDetailId)
+                entity.HasOne(d => d.Invoice)
+                    .WithMany(p => p.InvoiceDetails)
+                    .HasForeignKey(d => d.OrderId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_InvoiceDetail_Invoice");
 
@@ -225,6 +225,7 @@ namespace QLNhaHang.API.Entities
                     .IsUnicode(false)
                     .HasColumnName("OrderID")
                     .IsFixedLength();
+                
 
                 entity.HasOne(d => d.Menu)
                     .WithMany(p => p.OrderDetails)

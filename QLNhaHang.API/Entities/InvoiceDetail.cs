@@ -5,11 +5,11 @@ namespace QLNhaHang.API.Entities
 {
     public partial class InvoiceDetail
     {
-        public string InvoiceDetailId { get; set; } = null!;
-        public string InvoiceId { get; set; } = null!;
-        public string OrderId { get; set; } = null!;
+        public string? InvoiceDetailId { get; set; }
+        public string? InvoiceId { get; set; }
+        public string? OrderId { get; set; }
 
-        public virtual Invoice InvoiceDetailNavigation { get; set; } = null!;
-        public virtual Order Order { get; set; } = null!;
+        public virtual Invoice? Invoice { get; set; }
+        public virtual Order? Order { get; set; }
     }
 }
