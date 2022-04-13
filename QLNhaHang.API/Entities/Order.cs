@@ -17,7 +17,9 @@ namespace QLNhaHang.API.Entities
         [NotEmpty]
         [PropertyName("Số bàn")]
         public int? TableNumber { get; set; }
+        [PropertyName("Thành tiền")]
         public decimal? TotalPrice { get; set; }
+        [PropertyName("Trạng thái order")]
         public Status? Status { get; set; }
         public DateTime? CreatedTime { get; set; }
         public DateTime? UpdateTime { get; set; }

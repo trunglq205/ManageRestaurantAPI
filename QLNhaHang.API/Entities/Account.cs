@@ -27,8 +27,11 @@ namespace QLNhaHang.API.Entities
         [NotEmpty]
         [PropertyName("Chức vụ")]
         public int? Position { get; set; }
+        [PropertyName("Email")]
         public string? Email { get; set; }
+        [PropertyName("Số điện thoại")]
         public string? PhoneNumber { get; set; }
+        [PropertyName("Trạng thái hoạt động")]
         public Status? Status { get; set; }
         public DateTime? CreatedTime { get; set; }
         public DateTime? UpdatedTime { get; set; }

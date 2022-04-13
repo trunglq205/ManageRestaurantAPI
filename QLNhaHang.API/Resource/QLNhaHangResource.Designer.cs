@@ -106,6 +106,15 @@ namespace QLNhaHang.API.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tên món ăn đã tồn tại!.
+        /// </summary>
+        public static string MenuNameExist {
+            get {
+                return ResourceManager.GetString("MenuNameExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Không tìm thấy món ăn trong cơ sở dữ liệu!.
         /// </summary>
         public static string MenuNotFound {

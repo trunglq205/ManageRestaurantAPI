@@ -132,6 +132,9 @@
   <data name="InvoiceNotFound" xml:space="preserve">
     <value>Không tìm thấy hóa đơn trong cơ sở dữ liệu!</value>
   </data>
+  <data name="MenuNameExist" xml:space="preserve">
+    <value>Tên món ăn đã tồn tại!</value>
+  </data>
   <data name="MenuNotFound" xml:space="preserve">
     <value>Không tìm thấy món ăn trong cơ sở dữ liệu!</value>
   </data>

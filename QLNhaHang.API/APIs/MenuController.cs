@@ -13,9 +13,9 @@ namespace QLNhaHang.API.APIs
     public class MenuController : ControllerBase
     {
         private readonly IMenuService menuService;
-        public MenuController()
+        public MenuController(IConfiguration configuration)
         {
-            menuService = new MenuService();
+            menuService = new MenuService(configuration);
         }
 
         // GET: api/<MenuController>
@@ -56,11 +56,11 @@ namespace QLNhaHang.API.APIs
         }
 
         [HttpGet("paging")]
-        public IActionResult GetPaging([FromQuery]string? keySearch,[FromQuery]Pagination? pagination = null)
+        public IActionResult GetPaging([FromQuery]string? categoryName, [FromQuery]string? keySearch,[FromQuery]Pagination? pagination = null)
         {
             try
             {
-                var res = menuService.GetPaging(keySearch, pagination);
+                var res = menuService.GetPaging(categoryName, keySearch, pagination);
                 return Ok(res);
             }
             catch (Exception ex)

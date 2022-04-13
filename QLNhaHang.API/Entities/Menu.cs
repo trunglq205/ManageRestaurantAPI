@@ -21,8 +21,11 @@ namespace QLNhaHang.API.Entities
         [NotEmpty]
         [PropertyName("Đơn vị tính")]
         public string? Unit { get; set; }
+        [PropertyName("Loại món")]
         public string? CategoryId { get; set; }
+        [PropertyName("Ảnh đại diện")]
         public string? Image { get; set; }
+        [PropertyName("Mô tả")]
         public string? Description { get; set; }
         public DateTime? CreatedTime { get; set; }
         public DateTime? UpdateTime { get; set; }

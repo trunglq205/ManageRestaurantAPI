@@ -10,7 +10,8 @@ namespace QLNhaHang.API.Interfaces
 
         public Menu GetById(string menuId);
 
-        public PageResult<Menu> GetPaging(string? keySearch, Pagination? pagination = null);
+        public PageResult<Menu> GetPaging(string? categoryName, string? keySearch, Pagination? pagination = null);
+
         public Menu Insert(Menu menu);
 
         

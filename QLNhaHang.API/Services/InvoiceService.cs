@@ -71,7 +71,22 @@ namespace QLNhaHang.API.Services
 
         public Invoice Update(string invoiceId, Invoice invoice)
         {
-            throw new NotImplementedException();
+            using (var trans = dbContext.Database.BeginTransaction())
+            {
+                var invoiceFind = dbContext.Invoices.Find(invoiceId);
+                if (invoiceFind == null)
+                {
+                    throw new QLNhaHangException(String.Format(Resource.QLNhaHangResource.InvoiceNotFound));
+                }
+                else
+                {
+                    invoiceFind.Status = invoice.Status;
+                    invoiceFind.UpdatedTime = DateTime.Now;
+                    dbContext.Invoices.Update(invoiceFind);
+                    dbContext.SaveChanges();
+                    return invoiceFind;
+                }
+            }
         }
 
         public void Delete(string invoiceId)

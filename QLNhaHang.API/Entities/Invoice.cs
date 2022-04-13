@@ -15,7 +15,9 @@ namespace QLNhaHang.API.Entities
         [NotEmpty]
         [PropertyName("Người lập")]
         public string? UserId { get; set; }
+        [PropertyName("Thành tiền")]
         public decimal? TotalPrice { get; set; }
+        [PropertyName("Trạng thái thanh toán")]
         public Status? Status { get; set; }
         public DateTime? CreatedTime { get; set; }
         public DateTime? UpdatedTime { get; set; }
