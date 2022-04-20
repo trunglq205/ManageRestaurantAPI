@@ -13,9 +13,9 @@ namespace QLNhaHang.API.APIs
     public class MenuController : ControllerBase
     {
         private readonly IMenuService menuService;
-        public MenuController(IConfiguration configuration)
+        public MenuController()
         {
-            menuService = new MenuService(configuration);
+            menuService = new MenuService();
         }
 
         // GET: api/<MenuController>

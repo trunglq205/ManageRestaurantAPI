@@ -9,6 +9,8 @@ namespace QLNhaHang.API.Interfaces
 
         public Order GetById(string orderId);
 
+        public object GetDashboard(int? month, int? year);
+
 
         public Order Insert(Order order);
 

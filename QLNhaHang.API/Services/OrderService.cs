@@ -1,4 +1,5 @@
-﻿using QLNhaHang.API.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using QLNhaHang.API.Entities;
 using QLNhaHang.API.Exceptions;
 using QLNhaHang.API.Interfaces;
 using QLNhaHang.API.Utils;
@@ -15,7 +16,7 @@ namespace QLNhaHang.API.Services
 
         public IEnumerable<Order> Get()
         {
-            return dbContext.Orders.ToList();
+            return dbContext.Orders.Include(x=>x.OrderDetails).ToList();
         }
 
         public Order GetById(string orderId)
@@ -142,6 +143,40 @@ namespace QLNhaHang.API.Services
                 }
                 
             }
+        }
+
+        public object GetDashboard(int? month, int? year)
+        {
+            var lst = new List<decimal?>();
+            var today = DateTime.Now.Date;
+            var paid = dbContext.Orders.Where(x => x.CreatedTime.Value >= today && x.Status == Enums.Status.Paid).Sum(x=>x.TotalPrice);
+            var cancel = dbContext.Orders.Where(x => x.CreatedTime.Value >= today && x.Status == Enums.Status.Cancel).Sum(x => x.TotalPrice);
+            var serving = dbContext.Orders.Where(x => x.CreatedTime.Value >= today && x.Status != Enums.Status.Paid && x.Status != Enums.Status.Cancel).Sum(x => x.TotalPrice);
+            var lstOrder = dbContext.Orders.Where(x => x.CreatedTime.Value.Year == year && x.CreatedTime.Value.Month == month && x.Status == Enums.Status.Paid).ToList();
+
+            var totalOfMonth = EntityUtils<Order>.GetTotalDayOfMonth(month, year);
+
+            for (int i = 1; i <= totalOfMonth; i++)
+            {
+                decimal? price = 0;
+                foreach (var item in lstOrder)
+                {
+                    if(item.CreatedTime.Value.Day == i)
+                    {
+                        price += item.TotalPrice;
+                    }
+                }
+                lst.Add(price);
+            }
+
+            return new
+            {
+                Paid = paid,
+                Serving = serving,
+                Cancel = cancel,
+                ByDate = lst
+
+            };
         }
     }
 }

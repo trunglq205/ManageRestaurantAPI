@@ -52,6 +52,22 @@ namespace QLNhaHang.API.APIs
             }
         }
 
+        [HttpGet("dashboard")]
+        public IActionResult GetDashboard([FromQuery]int? month, [FromQuery] int? year)
+        {
+            try
+            {
+                var res = orderService.GetDashboard(month, year);
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                var response = EntityUtils<Order>.CatchValidateException(ex, Resource.QLNhaHangResource.ExceptionError);
+                return StatusCode(500, response);
+            }
+        }
+
+
         [HttpPost]
         public IActionResult Post(Order order)
         {

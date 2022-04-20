@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using Microsoft.EntityFrameworkCore;
 using QLNhaHang.API.Entities;
 using QLNhaHang.API.Exceptions;
 using QLNhaHang.API.Helpers;
@@ -11,13 +13,22 @@ namespace QLNhaHang.API.Services
     public class MenuService : IMenuService
     {
         private readonly QLNhaHangContext dbContext;
-        private readonly string[] _allowedImageExts;
-        private readonly string _picturePath;
-        public MenuService(IConfiguration configuration)
+        //private readonly string[] _allowedImageExts;
+        //private readonly string _picturePath;
+
+        // Account Cloudinary
+        private readonly Cloudinary cloudinary;
+        private readonly string CLOUD_NAME = "dfmk60ird";
+        public readonly string API_KEY = "582335188286295";
+        public readonly string API_SECRET = "KqUtIzYCjZ_ld0eC-4MMq0qhEEY";
+
+        public MenuService()
         {
             dbContext = new QLNhaHangContext();
-            _allowedImageExts = new string[] { "jpg", "jpeg", "png", "gif" };
-            _picturePath = configuration["PicturePath"];
+            //_allowedImageExts = new string[] { "jpg", "jpeg", "png", "gif" };
+            //_picturePath = "Picture";
+            CloudinaryDotNet.Account account = new CloudinaryDotNet.Account(CLOUD_NAME, API_KEY, API_SECRET);
+            cloudinary = new Cloudinary(account);
         }
         
 
@@ -75,7 +86,7 @@ namespace QLNhaHang.API.Services
                     menuFind.MenuName = menu.MenuName;
                     menuFind.Price = menu.Price;
                     menuFind.CategoryId = menu.CategoryId;
-                    menuFind.Image = menu.Image;
+                    menu.Image = SaveImage(menu.Image);
                     menuFind.Description = menu.Description;
                     menuFind.UpdateTime = DateTime.Now;
                     dbContext.Update(menuFind);
@@ -131,24 +142,47 @@ namespace QLNhaHang.API.Services
             // Kiểm tra nếu là chuỗi base64
             if(!string.IsNullOrEmpty(image) && Regex.IsMatch(image, @"^data:image\/.+;base64,"))
             {
-                var match = Regex.Match(image, @"^data:image\/(.+);base64,");
+                //var match = Regex.Match(image, @"^data:image\/(.+);base64,");
                 // Định dạng ảnh
-                var ext = match.Groups[1].Value;
-                var name = $"{Guid.NewGuid()}.{ext}";
+                //var ext = match.Groups[1].Value;
+                //var name = $"{Guid.NewGuid()}.{ext}";
                 // Decode base64 và lưu vào config path
                 try
                 {
-                    var bytes = Convert.FromBase64String(image.Substring(match.Value.Length));
-                    var path = Path.Combine(_picturePath, name);
-                    File.WriteAllBytes(path, bytes);
-                    return name;
+                    //var bytes = Convert.FromBase64String(image.Substring(match.Value.Length));
+                    //var path = Path.Combine(_picturePath, name);
+                    //File.WriteAllBytes(path, bytes);
+                    return UploadImage(image);
                 }
                 catch
                 {
                     throw new QLNhaHangException("Invalid Image");
                 }
+
             }
             return image;
+        }
+
+        /// <summary>
+        /// Upload ảnh lên Cloudinary
+        /// </summary>
+        /// <param name="imagePath"></param>
+        /// <returns></returns>
+        /// <exception cref="QLNhaHangException"></exception>
+        private string UploadImage(string imagePath)
+        {
+            try
+            {
+                var uploadParams = new ImageUploadParams()
+                {
+                    File = new FileDescription(imagePath)
+                };
+                var uploadResult = cloudinary.Upload(uploadParams);
+                return uploadResult.Url.ToString();
+            }
+            catch (Exception e) {
+                throw new QLNhaHangException(Resource.QLNhaHangResource.ExceptionError);
+            }
         }
     }
 }

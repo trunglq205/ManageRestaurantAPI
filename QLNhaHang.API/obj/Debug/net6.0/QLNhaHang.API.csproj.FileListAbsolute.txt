@@ -130,3 +130,5 @@ D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.genruntimeconfig.
 D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\ref\QLNhaHang.API.dll
 D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.Resource.QLNhaHangResource.resources
 D:\đồ án\Back\QLNhaHang.API\obj\Debug\net6.0\QLNhaHang.API.csproj.GenerateResource.cache
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\đồ án\Back\QLNhaHang.API\bin\Debug\net6.0\CloudinaryDotNet.dll
