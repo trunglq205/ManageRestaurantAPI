@@ -16,7 +16,7 @@ namespace QLNhaHang.API.Services
 
         public IEnumerable<Order> Get()
         {
-            return dbContext.Orders.Include(x=>x.OrderDetails).ToList();
+            return dbContext.Orders.Include(x=>x.OrderDetails).ThenInclude(x=>x.Menu).ToList();
         }
 
         public Order GetById(string orderId)
