@@ -15,7 +15,7 @@ namespace QLNhaHang.API.Services
 
         public IEnumerable<Category> Get()
         {
-            return dbContext.Categories.ToList();
+            return dbContext.Categories.ToList().OrderBy(x=>x.CreatedTime);
         }
         public Category Insert(Category category)
         {

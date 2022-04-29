@@ -108,6 +108,9 @@ namespace QLNhaHang.API.Services
                 }
                 else
                 {
+                    var lstOrderDetails = dbContext.OrderDetails.Where(x => x.MenuId == menuId);
+                    dbContext.RemoveRange(lstOrderDetails);
+                    dbContext.SaveChanges();
                     dbContext.Menus.Remove(menu);
                     dbContext.SaveChanges();
                     trans.Commit();

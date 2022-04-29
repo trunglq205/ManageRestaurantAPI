@@ -1,10 +1,11 @@
 ﻿using QLNhaHang.API.Entities;
+using QLNhaHang.API.Helpers;
 
 namespace QLNhaHang.API.Interfaces
 {
     public interface IOrderService
     {
-        public IEnumerable<Order> Get();
+        public PageResult<Order> Get(Pagination? pagination = null);
 
 
         public Order GetById(string orderId);

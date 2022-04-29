@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using QLNhaHang.API.Entities;
 using QLNhaHang.API.Exceptions;
+using QLNhaHang.API.Helpers;
 using QLNhaHang.API.Interfaces;
 using QLNhaHang.API.Services;
 using QLNhaHang.API.Utils;
@@ -19,11 +20,11 @@ namespace QLNhaHang.API.APIs
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get([FromQuery] Pagination? pagination = null)
         {
             try
             {
-                var res = orderService.Get();
+                var res = orderService.Get(pagination);
                 return Ok(res);
             }
             catch (Exception ex)

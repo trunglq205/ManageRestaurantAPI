@@ -1,10 +1,11 @@
 ﻿using QLNhaHang.API.Entities;
+using QLNhaHang.API.Helpers;
 
 namespace QLNhaHang.API.Interfaces
 {
     public interface IAccountService
     {
-        public IEnumerable<Account> Get();
+        public PageResult<Account> Get(Pagination? pagination = null);
 
 
         public Account Insert(Account user);

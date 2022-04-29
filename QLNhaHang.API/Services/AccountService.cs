@@ -1,5 +1,6 @@
 ﻿using QLNhaHang.API.Entities;
 using QLNhaHang.API.Exceptions;
+using QLNhaHang.API.Helpers;
 using QLNhaHang.API.Interfaces;
 using QLNhaHang.API.Utils;
 
@@ -12,9 +13,13 @@ namespace QLNhaHang.API.Services
         {
             dbContext = new QLNhaHangContext();
         }
-        public IEnumerable<Account> Get()
+        public PageResult<Account> Get(Pagination? pagination = null)
         {
-            return dbContext.Accounts.ToList();
+            var query = dbContext.Accounts.OrderByDescending(x => x.CreatedTime).AsQueryable();
+            var accounts = PageResult<Account>.ToPageResult(pagination, query).AsEnumerable();
+            pagination.TotalCount = query.Count();
+            var res = new PageResult<Account>(pagination, accounts);
+            return res;
         }
 
         public Account Insert(Account user)

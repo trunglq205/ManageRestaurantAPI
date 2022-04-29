@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QLNhaHang.API.Entities;
 using QLNhaHang.API.Exceptions;
+using QLNhaHang.API.Helpers;
 using QLNhaHang.API.Interfaces;
 using QLNhaHang.API.Utils;
 
@@ -14,9 +15,13 @@ namespace QLNhaHang.API.Services
             dbContext = new QLNhaHangContext();
         }
 
-        public IEnumerable<Order> Get()
+        public PageResult<Order> Get(Pagination? pagination = null)
         {
-            return dbContext.Orders.Include(x=>x.OrderDetails).ThenInclude(x=>x.Menu).ToList();
+            var query = dbContext.Orders.Include(x => x.OrderDetails).ThenInclude(x => x.Menu).OrderByDescending(x => x.CreatedTime).AsQueryable();
+            var orders = PageResult<Order>.ToPageResult(pagination, query).AsEnumerable();
+            pagination.TotalCount = query.Count();
+            var res = new PageResult<Order>(pagination, orders);
+            return res;
         }
 
         public Order GetById(string orderId)
@@ -104,6 +109,7 @@ namespace QLNhaHang.API.Services
                                 var orderDetailUpdate = order.OrderDetails.FirstOrDefault(x => x.OrderDetailId == orderDetail.OrderDetailId);
                                 orderDetail.OrderId = orderFind.OrderId; 
                                 orderDetail.Amount = orderDetailUpdate.Amount;
+                                orderDetail.Note = orderDetail.Note;
                                 dbContext.OrderDetails.Update(orderDetail);
                                 var menu = dbContext.Menus.FirstOrDefault(x=>x.MenuId == orderDetail.MenuId);
                                 orderDetail.Price = menu.Price * orderDetail.Amount;
@@ -149,9 +155,9 @@ namespace QLNhaHang.API.Services
         {
             var lst = new List<decimal?>();
             var today = DateTime.Now.Date;
-            var paid = dbContext.Orders.Where(x => x.CreatedTime.Value >= today && x.Status == Enums.Status.Paid).Sum(x=>x.TotalPrice);
-            var cancel = dbContext.Orders.Where(x => x.CreatedTime.Value >= today && x.Status == Enums.Status.Cancel).Sum(x => x.TotalPrice);
-            var serving = dbContext.Orders.Where(x => x.CreatedTime.Value >= today && x.Status != Enums.Status.Paid && x.Status != Enums.Status.Cancel).Sum(x => x.TotalPrice);
+            var paid = dbContext.Orders.Where(x => x.CreatedTime.Value >= today && x.Status == Enums.Status.Paid).ToList();
+            var cancel = dbContext.Orders.Where(x => x.CreatedTime.Value >= today && x.Status == Enums.Status.Cancel).ToList();
+            var serving = dbContext.Orders.Where(x => x.CreatedTime.Value >= today && x.Status != Enums.Status.Paid && x.Status != Enums.Status.Cancel).ToList();
             var lstOrder = dbContext.Orders.Where(x => x.CreatedTime.Value.Year == year && x.CreatedTime.Value.Month == month && x.Status == Enums.Status.Paid).ToList();
 
             var totalOfMonth = EntityUtils<Order>.GetTotalDayOfMonth(month, year);
@@ -171,9 +177,12 @@ namespace QLNhaHang.API.Services
 
             return new
             {
-                Paid = paid,
-                Serving = serving,
-                Cancel = cancel,
+                Paid = paid.Sum(x => x.TotalPrice),
+                NumOfPaid = paid.Count,
+                Serving = serving.Sum(x=>x.TotalPrice),
+                NumOfServing = serving.Count,
+                Cancel = cancel.Sum(x=>x.TotalPrice),
+                NumOfCancel = cancel.Count,
                 ByDate = lst
 
             };
