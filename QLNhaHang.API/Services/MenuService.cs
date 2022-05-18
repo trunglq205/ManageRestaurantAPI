@@ -86,7 +86,7 @@ namespace QLNhaHang.API.Services
                     menuFind.MenuName = menu.MenuName;
                     menuFind.Price = menu.Price;
                     menuFind.CategoryId = menu.CategoryId;
-                    menu.Image = SaveImage(menu.Image);
+                    menuFind.Image = SaveImage(menu.Image);
                     menuFind.Description = menu.Description;
                     menuFind.UpdateTime = DateTime.Now;
                     dbContext.Update(menuFind);

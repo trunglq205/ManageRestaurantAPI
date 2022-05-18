@@ -1,4 +1,5 @@
-﻿using QLNhaHang.API.Entities;
+﻿using OfficeOpenXml;
+using QLNhaHang.API.Entities;
 
 namespace QLNhaHang.API.Interfaces
 {
@@ -17,5 +18,6 @@ namespace QLNhaHang.API.Interfaces
 
 
         public void Delete(string invoiceId);
+        public ExcelPackage ExportExcel(Order[] orders);
     }
 }

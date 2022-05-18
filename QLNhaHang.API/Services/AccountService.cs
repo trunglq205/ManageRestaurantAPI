@@ -36,7 +36,8 @@ namespace QLNhaHang.API.Services
                 else
                 {
                     user.UserId = Guid.NewGuid().ToString();
-                    user.Status = Enums.Status.Active;
+                    user.Position = Enums.Position.Employee;
+                    user.Status = Enums.Status.Disable;
                     user.CreatedTime = DateTime.Now;
                     dbContext.Accounts.Add(user);
                     dbContext.SaveChanges();
@@ -57,14 +58,7 @@ namespace QLNhaHang.API.Services
             {
                 throw new QLNhaHangException(Resource.QLNhaHangResource.AccountNotFound);
             }
-            else
-            {
-                if(userFind.Status == Enums.Status.Disable)
-                {
-                    throw new QLNhaHangException(Resource.QLNhaHangResource.AccountDisable);
-                }
-                return userFind;
-            }
+            return userFind;
         }
 
         public Account Update(string userId, Account user)

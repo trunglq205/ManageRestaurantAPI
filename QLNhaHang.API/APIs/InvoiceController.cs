@@ -70,5 +70,15 @@ namespace QLNhaHang.API.APIs
                 return StatusCode(500, response);
             }
         }
+        [HttpPost("export")]
+        public async Task<IActionResult> ExportInvoice(Order[] orders)
+        {
+            await Task.Yield();
+            var res = invoiceService.ExportExcel(orders);
+            var stream = new MemoryStream();
+            res.SaveAs(stream);
+            stream.Position = 0;
+            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "hoa-don.xlsx");
+        }
     }
 }

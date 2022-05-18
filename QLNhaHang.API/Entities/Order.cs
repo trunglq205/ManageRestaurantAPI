@@ -17,6 +17,8 @@ namespace QLNhaHang.API.Entities
         [NotEmpty]
         [PropertyName("Số bàn")]
         public int? TableNumber { get; set; }
+        [PropertyName("Người Order")]
+        public string? OrderBy { get; set; }
         [PropertyName("Thành tiền")]
         public decimal? TotalPrice { get; set; }
         [PropertyName("Trạng thái order")]

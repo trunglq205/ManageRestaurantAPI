@@ -26,7 +26,7 @@ namespace QLNhaHang.API.Entities
         public string? FullName { get; set; }
         [NotEmpty]
         [PropertyName("Chức vụ")]
-        public int? Position { get; set; }
+        public Position? Position { get; set; }
         [PropertyName("Email")]
         public string? Email { get; set; }
         [PropertyName("Số điện thoại")]

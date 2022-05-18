@@ -109,7 +109,7 @@ namespace QLNhaHang.API.Services
                                 var orderDetailUpdate = order.OrderDetails.FirstOrDefault(x => x.OrderDetailId == orderDetail.OrderDetailId);
                                 orderDetail.OrderId = orderFind.OrderId; 
                                 orderDetail.Amount = orderDetailUpdate.Amount;
-                                orderDetail.Note = orderDetail.Note;
+                                orderDetail.Note = orderDetailUpdate.Note;
                                 dbContext.OrderDetails.Update(orderDetail);
                                 var menu = dbContext.Menus.FirstOrDefault(x=>x.MenuId == orderDetail.MenuId);
                                 orderDetail.Price = menu.Price * orderDetail.Amount;
@@ -120,6 +120,7 @@ namespace QLNhaHang.API.Services
                         dbContext.SaveChanges();
                     }
                     orderFind.TableNumber = order.TableNumber;
+                    orderFind.Status = order.Status;
                     orderFind.UpdateTime = DateTime.Now;
                     dbContext.Orders.Update(orderFind);
                     dbContext.SaveChanges();
@@ -140,8 +141,8 @@ namespace QLNhaHang.API.Services
                 }
                 else
                 {
-                    var lstOrderDetails = dbContext.OrderDetails.Where(x => x.OrderId == orderId).ToList();
-                    dbContext.OrderDetails.RemoveRange(lstOrderDetails);
+                    var lstOrderDetails = dbContext.OrderDetails.Where(x => x.OrderId == orderId);
+                    dbContext.RemoveRange(lstOrderDetails);
                     dbContext.SaveChanges();
                     dbContext.Orders.Remove(order);
                     dbContext.SaveChanges();
@@ -161,7 +162,7 @@ namespace QLNhaHang.API.Services
             var lstOrder = dbContext.Orders.Where(x => x.CreatedTime.Value.Year == year && x.CreatedTime.Value.Month == month && x.Status == Enums.Status.Paid).ToList();
 
             var totalOfMonth = EntityUtils<Order>.GetTotalDayOfMonth(month, year);
-
+             
             for (int i = 1; i <= totalOfMonth; i++)
             {
                 decimal? price = 0;
